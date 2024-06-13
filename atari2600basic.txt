@@ -1,0 +1,107 @@
+# Some Atari Basic Programming Ideas
+1 A<-1
+2 Print "PICK A NUMBER 1-9"
+3 A<-A+1
+4 B<-Key
+5 If B = A / 9 Then Goto 5 
+6 If A>9 Then A<-1 ; Goto 2
+7 If B=A Then Print "WIN"
+8 If B<>A Then Print "LOSE (",A,")"
+9 Print "PLAY AGAIN" ; B<-0
+10 B<-Key ; If B>0 Then Goto 1
+
+1 Hor1 <- A
+2 A <- A + 1
+3 If A > 99 Then Goto 4 Else Goto 1
+4 Ver1 <- B
+5 B <- B + 1
+6 If B > 99 Then Goto 8 Else Goto 4
+7 Hor1 <- A
+8 
+
+
+1 Hor1 = A, A=A+1
+2 If A == 0 Then Goto 3 Else Goto 1
+3 Ver1 = B, B=B+1
+4 If B == 0, Then Goto 5 Else Goto 3
+5 Hor1 = A, A=A-1
+6 If A == 0 Then Goto 7 Else Goto 5
+7 Ver1 = B, B=B-1
+8 If B == 0, Then Goto 9 Else Goto 7
+9 Goto 1
+
+1 Hor1 = 50, Ver1 = 50, C = C + 1
+2 Hor2 = A, A=A+1, B=C
+3 If A == 0 Then Goto 4 Else Goto 2
+4 Ver2 = B, B=B+1, A=C
+5 If B == 0, Then Goto 6 Else Goto 4
+6 Hor2 = A, A=A-1, B=C
+7 If A == 0 Then Goto 8 Else Goto 6
+8 Ver2 = B, B=B-1, A=C
+9 If B == 0, Then Goto 1 Else Goto 8
+10 
+
+1 Hor2 = A, A=A+1
+2 If A == 0 Then Goto 3 Else Goto 1
+3 Ver2 = B, B=B+1
+4 If B == 0, Then Goto 5 Else Goto 3
+5 Hor2 = A, A=A-1
+6 If A == 0 Then Goto 7 Else Goto 5
+7 Ver2 = B, B=B-1
+8 If B == 0, Then Goto 1 Else Goto 7
+
+1 Hor2 = A, A=A+1
+2 If A > 0 Then Goto 1
+3 Ver2 = B, B=B+1
+4 If B > 0 Then Goto 3
+5 Hor2 = A, A=A-1
+6 If A > 0 Then Goto 5
+7 Ver2 = B, B=B-1
+8 If B > 0 Then Goto 7
+9 Goto 1
+
+1 X1=0, X2=99, Y=0
+2 Hor1 = X1, Ver1 = Y, X1=X1+1
+3 Hor2 = X2, Ver2 = Y, X2=X2-1
+4 Y=Y+1
+5 Goto 2
+
+1 A=0, B=99, C=0
+2 Hor1 = A, Ver1 = C, A=A+1
+3 Hor2 = B, Ver2 = C, B=B-1
+4 C=C+1
+5 Goto 2
+
+1 Hor1 = A, Ver1 = C, A=A+1
+2 Hor2 = B, Ver2 = C, B=B-1
+3 C=C+1
+4 Goto 1
+
+// Diagonal Lines
+1 Hor1 <- Hor1 + 1
+2 Hor2 <- Hor2 - 1
+3 Note <- Hor1
+4 Ver1 <- C
+5 Ver2 <- C
+6 C <- C + 1
+7 Goto 1
+
+
+# Program 2
+1 Hor2 = Hor2 + 1
+2 If Hor2 > 0 Then Goto 1
+3 Ver2 = Ver2 + 1
+4 If Ver2 > 0 Then Goto 3
+5 Hor2 = Hor2 - 1
+6 If Hor2 < 0 Then Goto 5
+7 Ver2 = Ver2 - 1
+8 If Ver2 < 0 Then Goto 7
+9 Goto 1
+
+# Program 3
+1 Hor1 <- 50, Ver1 <- 50 
+2 If Key = 4 Then Hor1 <- Hor1 - 1
+3 If Key = 6 Then Hor1 <- Hor1 + 1
+4 If Key = 2 Then Ver1 <- Ver1 - 1
+5 If Key = 8 Then Ver1 <- Ver1 + 1
+6 Goto 2
